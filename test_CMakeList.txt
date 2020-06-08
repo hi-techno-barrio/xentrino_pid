@@ -1,0 +1,9 @@
+#add dynamic reconfigure api
+#find_package(catkin REQUIRED dynamic_reconfigure)
+generate_dynamic_reconfigure_options(
+  cfg/Tutorials.cfg
+  #...
+)
+
+# make sure configure headers are built before any node using them
+add_dependencies(example_node ${PROJECT_NAME}_gencfg)
